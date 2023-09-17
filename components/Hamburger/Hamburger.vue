@@ -36,18 +36,28 @@
 <template>
   <div class="mobile-menu">
     <button class="toggle-menu" @click="toggleMenu">{{ menuOpen ? 'Close' : 'Menu' }}</button>
-    <ul ref="menuItems" class="menu-items">
-      <li>Item 1</li>
-      <li>Item 2</li>
-      <li>Item 3</li>
-    </ul>
+    <div ref="menuItems" class="menu-items">
+      <div class="mr-4 py-3 px-4"> 
+        <NuxtLink to="/" @click="toggleMenu"><SvgLogo /></NuxtLink>
+      </div>
+      <ul class="menu-items-list px-4">
+        <li class="menu-item"><NuxtLink to="/about" class="menu-item-link" @click="toggleMenu">About</NuxtLink></li>
+        <li class="menu-item"><NuxtLink to="/about" class="menu-item-link"  @click="toggleMenu">About</NuxtLink></li>
+        <li class="menu-item"><NuxtLink to="/about" class="menu-item-link" @click="toggleMenu">Contact</NuxtLink></li>
+      </ul>
+    </div>
   </div>
 </template>
 
 <style scoped>
 /* Add your CSS styles here */
+.toggle-menu{
+  color:#1d1d1d;
+}
 .mobile-menu {
   /* Your menu styles */
+  display: flex;
+  align-items: center;
   .toggle-menu{
     z-index: 88;
     position: relative;
@@ -56,6 +66,17 @@
 
 .menu-open {
   /* Your open menu styles */
+}
+.menu-items-list{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+.menu-item-link{
+  font-size: 10rem;
+  line-height: .8;
 }
 .menu-items{
   position: fixed;

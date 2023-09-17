@@ -25,7 +25,11 @@ export default defineNuxtConfig({
      font: {
           autoImport: true,
      },
-
+     image: {
+          imagekit: {
+            baseURL: 'https://ik.imagekit.io/lds4myi98'
+          }
+     },
      tailwindcss: {
           cssPath: '~/assets/css/tailwind.css',
           configPath: 'tailwind.config.js',
