@@ -3,12 +3,8 @@
     const { $gsap } = useNuxtApp()
     const { $Observer } = useNuxtApp()
     import { inView, animate,stagger } from "motion";
-    import ImageKit from "imagekit";
-    
+
     definePageMeta({ })
-
-    const imageSources = ref([]);
-
 
 //   const imageSources = [
 //         {url:"https://ik.imagekit.io/freeflo/production/be204dc8-2fd6-46ff-8f4a-0bb5906f308e.png?tr=w-640,q-75&alt=media&pr-true", author:"David vic"},
@@ -88,7 +84,7 @@
                 </div>
              </div>
         </figure> 
-    </div>
+    </div>  
 
     <article>
         <div class="grid xl:grid-cols-8 md:grid-cols-6 w-full">
@@ -96,7 +92,7 @@
                 <div class="p-4 ">
                     <div class="image-wrapper">
                         <!-- <NuxtImg  class="w-full image-source"  :src="imageSource.url"  draggable="false" loading="lazy" decoding="async" /> -->
-                        <NuxtImg  class="w-full image-source" provider="imagekit" src="/default-image.jpg" draggable="false" loading="lazy" decoding="async" />
+                        <NuxtImg  class="w-full image-source"  src="" draggable="false" loading="lazy" decoding="async" />
                     </div>
                     <div class="mt-4 flex justify-between items-center image-content">
                         <div class="flex items-center">
@@ -160,7 +156,7 @@
 <style lang="scss" scoped>
  .hero-image{
     position: relative;
-    height: 45rem;
+    height: 35rem;
     &-wrapper{
         position: absolute;
         top: 0;

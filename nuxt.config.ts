@@ -1,15 +1,15 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
      modules: [
-          '@nuxtjs/prismic', 
           '@vueuse/nuxt',
           '@nuxtjs/tailwindcss',
           '@nuxt/image-edge',
           'nuxt-swiper',
           '@hypernym/nuxt-gsap',
           '@hypernym/nuxt-font',
+          '@nuxtjs/prismic',
      ],
-     
+     prismic: { endpoint: 'renderwit' },
      css: [
           '~/assets/styles/main.scss',
           '~/assets/css/fonts.css'
@@ -25,11 +25,11 @@ export default defineNuxtConfig({
      font: {
           autoImport: true,
      },
-     image: {
-          imagekit: {
-            baseURL: 'https://ik.imagekit.io/lds4myi98'
-          }
-     },
+     // image: {
+     //      imagekit: {
+     //        baseURL: 'https://ik.imagekit.io/lds4myi98'
+     //      }
+     // },
      tailwindcss: {
           cssPath: '~/assets/css/tailwind.css',
           configPath: 'tailwind.config.js',
