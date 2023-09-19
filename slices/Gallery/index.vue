@@ -16,5 +16,6 @@ defineProps(
 <template>
   <section>
     <PrismicImage :field="slice.primary.image" />
+    asdasd hjgjhgjhg
   </section>
 </template>

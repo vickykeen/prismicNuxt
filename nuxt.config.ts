@@ -9,7 +9,7 @@ export default defineNuxtConfig({
           '@hypernym/nuxt-font',
           '@nuxtjs/prismic',
      ],
-     prismic: { endpoint: 'renderwit' },
+     prismic: { endpoint: 'https://renderwit.cdn.prismic.io/api/v2' },
      css: [
           '~/assets/styles/main.scss',
           '~/assets/css/fonts.css'
