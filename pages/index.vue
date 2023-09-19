@@ -3,9 +3,10 @@
     const { $gsap } = useNuxtApp()
     const { $Observer } = useNuxtApp()
     import { inView, animate,stagger } from "motion";
+    import { components } from '~/slices'
 
     definePageMeta({ })
-
+   const imageSources = ref([]);
 //   const imageSources = [
 //         {url:"https://ik.imagekit.io/freeflo/production/be204dc8-2fd6-46ff-8f4a-0bb5906f308e.png?tr=w-640,q-75&alt=media&pr-true", author:"David vic"},
 //         {url:"https://ik.imagekit.io/freeflo/production/70b2d3a9-59dd-49df-aa93-ec0020b33c82.png?tr=w-1920,q-75&alt=media&pr-true", author:"David vic"},
@@ -55,7 +56,11 @@
  const closeLightbox = () => {
   selectedImage.value = null;
 };
+const { client } = usePrismic()
+// const { data: home } = await useAsyncData('home', () => client.getByUID('page', 'home'))
 
+const { data: page } = useAsyncData('homeMain', () => client.getByUID('page', 'homeMain')
+)
 </script>
 
 <template>
@@ -106,7 +111,11 @@
             </div>
         </div>
     </article>
-
+    <SliceZone
+    wrapper="main"
+    :slices="page?.data.slices ?? []"
+    :components="components"
+  />
     <div class="image-preview" v-if="selectedImage" >
         <article class="">
             <div class="grid grid-cols-12 items-center image-preview-header">
